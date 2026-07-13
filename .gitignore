@@ -20,3 +20,5 @@ dist/
 # Windows
 Thumbs.db
 desktop.ini
+
+config.json
