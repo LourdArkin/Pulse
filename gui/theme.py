@@ -1,0 +1,17 @@
+# gui/theme.py
+
+# Window
+WINDOW_WIDTH = 500
+WINDOW_HEIGHT = 650
+
+WINDOW_MARGIN = 16
+
+# Layout
+SECTION_SPACING = 12
+CARD_PADDING = 12
+
+# Buttons
+BUTTON_HEIGHT = 36
+
+# Corners
+CARD_RADIUS = 8

@@ -1,0 +1,49 @@
+{
+    "active_profile": "default",
+    "profiles": {
+        "default": {
+            "mouse": {
+                "movement_enabled": true,
+                "movement_distance": 101,
+                "randomize_distance": false,
+                "min_distance": 77,
+                "max_distance": 20,
+                "movement_interval": 150,
+                "clicks_enabled": false,
+                "click_interval": 30,
+                "click_button": "left"
+            },
+            "keyboard": {
+                "enabled": true,
+                "preset": "expanded",
+                "interval": 10
+            },
+            "timing": {
+                "enabled": false,
+                "randomness": 80
+            }
+        },
+        "Gaming": {
+            "mouse": {
+                "movement_enabled": true,
+                "movement_distance": 101,
+                "randomize_distance": true,
+                "min_distance": 77,
+                "max_distance": 20,
+                "movement_interval": 150,
+                "clicks_enabled": false,
+                "click_interval": 30,
+                "click_button": "left"
+            },
+            "keyboard": {
+                "enabled": true,
+                "preset": "expanded",
+                "interval": 40
+            },
+            "timing": {
+                "enabled": true,
+                "randomness": 50
+            }
+        }
+    }
+}
