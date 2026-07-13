@@ -1,6 +1,8 @@
 import json
 import os
+import shutil
 import logging
+
 
 logger = logging.getLogger("Pulse")  # DEBUG
 
@@ -26,9 +28,20 @@ class ConfigManager:
 
     def load(self):
         if not os.path.exists(self.path):
-            self.data = self.default_config()
-            self.save()
-            return
+            base_dir = os.path.dirname(self.path)
+
+            default_path = os.path.join(
+                base_dir,
+                "config.default.json"
+            )
+
+            if os.path.exists(default_path):
+                shutil.copy(default_path, self.path)
+                logger.info("Created config.json from config.default.json")
+            else:
+                self.data = self.default_config()
+                self.save()
+                return
 
         with open(self.path, "r") as f:
             self.data = json.load(f)

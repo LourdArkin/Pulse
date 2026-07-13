@@ -38,7 +38,7 @@ class Simulator:
         )
 
         self.next_keyboard_action = now + self.get_randomized_interval(
-            mouse["movement_interval"]  # we'll improve this later
+            keyboard["interval"]
         )
 
         self.thread = threading.Thread(target=self.run_loop, daemon=True)
@@ -90,8 +90,7 @@ class Simulator:
                 self.next_keyboard_action = (
                     now +
                     self.get_randomized_interval(
-                        mouse["movement_interval"]
-                        # TODO: This should be a separate keyboard interval setting in the config
+                        keyboard["interval"]
                     )
                 )
 
