@@ -81,6 +81,13 @@ class ConfigManager:
             "timing": {
                 "enabled": True,
                 "randomness": 20
+            },
+
+            "hotkeys": {
+                "enabled": True,
+                "start": "Ctrl+Shift+S",
+                "stop": "Ctrl+Shift+X",
+                "toggle_window": "Ctrl+Shift+P"
             }
         }
 

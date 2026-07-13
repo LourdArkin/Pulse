@@ -21,6 +21,12 @@
             "timing": {
                 "enabled": false,
                 "randomness": 20
+            },
+            "hotkeys": {
+                "enabled": true,
+                "start": "Ctrl+Shift+S",
+                "stop": "Ctrl+Shift+X",
+                "toggle_window": "Ctrl+Shift+P"
             }
         }
     }

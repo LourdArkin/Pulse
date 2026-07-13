@@ -8,6 +8,7 @@ from gui.widgets.collapsible_section import CollapsibleSection
 from gui.widgets.profile_selector import ProfileSelector
 from gui.sections.profile_section import ProfileSection
 from gui.sections.timing_section import TimingSection
+from gui.sections.hotkeys_section import HotkeysSection
 
 
 class SettingsWindow(QWidget):
@@ -45,15 +46,12 @@ class SettingsWindow(QWidget):
         self.mouse_section = MouseSection(self.app.config)
         self.keyboard_section = KeyboardSection(self.app.config)
         self.timing_section = TimingSection(self.app.config)
+        self.hotkeys_section = HotkeysSection()
 
         layout.addWidget(self.mouse_section)
         layout.addWidget(self.keyboard_section)
         layout.addWidget(self.timing_section)
-
-        # Placeholder sections
-
-        layout.addWidget(CollapsibleSection("Hotkeys"))
-        layout.addWidget(QLabel("Coming Soon..."))
+        layout.addWidget(self.hotkeys_section)
 
         layout.addStretch()
 
