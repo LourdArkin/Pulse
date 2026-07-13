@@ -52,9 +52,6 @@ class SettingsWindow(QWidget):
 
         # Placeholder sections
 
-        layout.addWidget(CollapsibleSection("Startup"))
-        layout.addWidget(QLabel("Coming Soon..."))
-
         layout.addWidget(CollapsibleSection("Hotkeys"))
         layout.addWidget(QLabel("Coming Soon..."))
 
