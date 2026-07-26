@@ -6,6 +6,8 @@ from gui.settings_window import SettingsWindow
 from tray.tray_manager import TrayManager
 from config.mouse_engine import MouseEngine
 
+from config.hotkey_manager import HotkeyManager
+
 import logging
 
 logger = logging.getLogger("Pulse")  # DEBUG = logging.getLogger("Pulse")  # DEBUG
@@ -28,6 +30,11 @@ class PulseApp:
             self.config,
             self.keyboard_engine,
             self.mouse_engine
+        )
+
+        self.hotkey_manager = HotkeyManager(
+            self.config,
+            self
         )
 
         # -----------------------------
@@ -59,8 +66,17 @@ class PulseApp:
     # -----------------------------
     # APP LIFECYCLE
     # -----------------------------
+
+    def toggle_settings(self):
+        if self.settings_window.isVisible():
+            self.hide_settings()
+        else:
+            self.show_settings()
+
     def run(self):
         logger.info("PulseApp is running...")  # DEBUG
+
+        self.hotkey_manager.register()  # Register hotkeys on app start
 
         # IMPORTANT: single, stable UI entry point
         self.show_settings()
