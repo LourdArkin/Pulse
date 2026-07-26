@@ -46,7 +46,7 @@ class SettingsWindow(QWidget):
         self.mouse_section = MouseSection(self.app.config)
         self.keyboard_section = KeyboardSection(self.app.config)
         self.timing_section = TimingSection(self.app.config)
-        self.hotkeys_section = HotkeysSection(self.app.config)
+        self.hotkeys_section = HotkeysSection(self.app)
 
         layout.addWidget(self.mouse_section)
         layout.addWidget(self.keyboard_section)

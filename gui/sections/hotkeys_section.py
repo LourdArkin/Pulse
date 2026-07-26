@@ -10,10 +10,11 @@ from PySide6.QtCore import Qt
 
 
 class HotkeysSection(CollapsibleSection):
-    def __init__(self, config_manager):
+    def __init__(self, app):
         super().__init__("Hotkeys")
 
-        self.config = config_manager
+        self.app = app
+        self.config = app.config
 
         self.recording = None
         self.current_modifiers = Qt.KeyboardModifier.NoModifier
@@ -134,6 +135,8 @@ class HotkeysSection(CollapsibleSection):
                 "toggle_window": self.settings_hotkey_label.text(), 
             },
         )
+
+        self.app.hotkey_manager.reload()
 
     # ---------------- UI ----------------
 
